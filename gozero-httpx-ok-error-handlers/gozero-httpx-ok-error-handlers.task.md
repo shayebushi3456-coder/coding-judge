@@ -1,0 +1,1 @@
+我们 REST 服务想统一包装成功和失败响应。成功时 OkJson / OkJsonCtx 写出前，希望能挂一个可选的包装函数，把业务数据套成公司统一的 envelope；失败时 Error / ErrorCtx 也要能挂自定义处理器，自己决定 HTTP 状态码和响应体（字符串、error、结构体 JSON，或者只回状态码不写 body）。没挂处理器时保持现在的默认行为：成功直接 JSON 200，失败走原来的默认错误输出（含 gRPC 错误码映射那种）。SetOkHandler、SetErrorHandler、SetErrorHandlerCtx 这些注册入口要能用，而且带 context 的路径要和普通路径行为对齐。改完在模块里跑 go test 验证即可，别把无关的写响应工具改坏。

@@ -1,5 +1,5 @@
-在当前代码库把这几块能力补齐。
+在当前代码库把 mock 缺的几块补上。
 
-先把 GraphQL mocking 做完整：graphql.query / mutation / operation / link 要能按 operation type 和 name 拦住请求，DocumentNode 当名字也能用；请求体要从 GET querystring、POST JSON、multipart 里解析出 query/variables，再匹配 handler。parse 和 predicate 逻辑要正确，匿名 operation 该警告就警告。
+GraphQL 相关请求现在对不上，名字对了才拦截，有人丢整段查询文档进来也要能认。各种发法的请求都要从里面拿出查询和变量，对不上就别处理。
 
-再补 delay：支持毫秒数，也要支持 real / infinite 模式，别传非法值直接炸。bypass 要能造出被 MSW 忽略的 Request，passthrough 要能在 handler 里放行当前请求。别把普通 http handler 弄坏，本地用 pnpm test:unit 验证。
+响应有时候想故意慢一点再回，数字也好，模拟真实耗时或一直等着也好。有的请求想绕过 mock 直接打出去，有的在处理函数里想放行也行。普通 http 那套别搞坏，跑 pnpm test:unit。

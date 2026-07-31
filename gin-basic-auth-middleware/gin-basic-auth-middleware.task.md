@@ -1,0 +1,1 @@
+需要在框架里补一套 HTTP Basic Auth 中间件：给账号密码表，能拦未授权请求，合法用户放行并把用户名塞进 context。要支持自定义 realm（空的话用默认文案），realm 里带引号也要按规范转义。鉴权失败返回 401，并带上 WWW-Authenticate。另外再做一版给反向代理用的：读 Proxy-Authorization，失败用 407 和 Proxy-Authenticate，用户名用另一套 context key。比对凭证别用普通字符串相等。空账号表或空用户名在初始化时直接 panic。本地 go test 验证。

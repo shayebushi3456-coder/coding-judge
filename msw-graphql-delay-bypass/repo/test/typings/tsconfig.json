@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "noEmit": true,
+    "types": ["node"],
+    "typeRoots": ["../../node_modules/@types"],
+    "lib": ["dom"],
+    "resolveJsonModule": true,
+    "rootDir": "../..",
+    "baseUrl": ".",
+    "paths": {
+      "msw": ["../.."],
+      "msw/*": ["../../*"]
+    }
+  },
+  "include": ["../../global.d.ts", "**/*.test-d.*"],
+  "exclude": ["node_modules"]
+}

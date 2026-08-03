@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignore": [".pnpmfile.cjs", "scripts/typedoc-remove-prefix.js"],
+  "ignoreDependencies": [
+    "@types/react",
+    "@types/react-dom",
+    "react",
+    "react-dom"
+  ],
+  "ignoreWorkspaces": ["examples/**", "integrations/**"],
+  "workspaces": {
+    "packages/query-codemods": {
+      "entry": ["src/v4/**/*.cjs", "src/v5/**/*.cjs"],
+      "ignore": ["**/__testfixtures__/**"]
+    },
+    "packages/vue-query": {
+      "ignore": ["**/__mocks__/**"],
+      "ignoreDependencies": ["vue2", "vue2.7"]
+    }
+  }
+}

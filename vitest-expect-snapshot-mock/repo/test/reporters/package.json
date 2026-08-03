@@ -1,0 +1,14 @@
+{
+  "name": "@vitest/test-reporters",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "flatted": "^3.2.9",
+    "pkg-reporter": "./reportPkg/",
+    "vitest": "workspace:*",
+    "vitest-sonar-reporter": "0.4.1"
+  }
+}

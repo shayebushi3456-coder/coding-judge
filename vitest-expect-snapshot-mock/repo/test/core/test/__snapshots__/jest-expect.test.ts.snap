@@ -1,0 +1,254 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`asymmetric matcher error 1`] = `
+{
+  "actual": "hello",
+  "diff": undefined,
+  "expected": "StringContaining "xx"",
+  "message": "expected 'hello' to deeply equal StringContaining "xx"",
+}
+`;
+
+exports[`asymmetric matcher error 2`] = `
+{
+  "actual": "hello",
+  "diff": undefined,
+  "expected": "StringNotContaining "ll"",
+  "message": "expected 'hello' to deeply equal StringNotContaining "ll"",
+}
+`;
+
+exports[`asymmetric matcher error 3`] = `
+{
+  "actual": "Object {
+  "foo": "hello",
+}",
+  "diff": "- Expected
++ Received
+
+  Object {
+-   "foo": StringContaining "xx",
++   "foo": "hello",
+  }",
+  "expected": "Object {
+  "foo": StringContaining "xx",
+}",
+  "message": "expected { foo: 'hello' } to deeply equal { foo: StringContaining "xx" }",
+}
+`;
+
+exports[`asymmetric matcher error 4`] = `
+{
+  "actual": "Object {
+  "foo": "hello",
+}",
+  "diff": "- Expected
++ Received
+
+  Object {
+-   "foo": StringNotContaining "ll",
++   "foo": "hello",
+  }",
+  "expected": "Object {
+  "foo": StringNotContaining "ll",
+}",
+  "message": "expected { foo: 'hello' } to deeply equal { foo: StringNotContaining "ll" }",
+}
+`;
+
+exports[`asymmetric matcher error 5`] = `
+{
+  "actual": "hello",
+  "diff": undefined,
+  "expected": "StringContaining "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"",
+  "message": "expected 'hello' to deeply equal StringContaining{…}",
+}
+`;
+
+exports[`asymmetric matcher error 6`] = `
+{
+  "actual": "hello",
+  "diff": undefined,
+  "expected": "StringContaining "xx"",
+  "message": "expected error to match asymmetric matcher",
+}
+`;
+
+exports[`asymmetric matcher error 7`] = `
+{
+  "actual": "hello",
+  "diff": undefined,
+  "expected": "StringContaining "ll"",
+  "message": "expected error not to match asymmetric matcher",
+}
+`;
+
+exports[`asymmetric matcher error 8`] = `
+{
+  "actual": "[Error: hello]",
+  "diff": "- Expected: 
+StringContaining "ll"
+
++ Received: 
+[Error: hello]",
+  "expected": "StringContaining "ll"",
+  "message": "expected error to match asymmetric matcher",
+}
+`;
+
+exports[`asymmetric matcher error 9`] = `
+{
+  "actual": "[Error: hello]",
+  "diff": "- Expected: 
+[Function MyError1]
+
++ Received: 
+[Error: hello]",
+  "expected": "[Function MyError1]",
+  "message": "expected error to be instance of MyError1",
+}
+`;
+
+exports[`diff 1`] = `
+{
+  "actual": "undefined",
+  "diff": "- Expected: 
+true
+
++ Received: 
+undefined",
+  "expected": "true",
+  "message": "expected undefined to be truthy",
+}
+`;
+
+exports[`diff 2`] = `
+{
+  "actual": "Object {
+  "hello": "world",
+}",
+  "diff": "- Expected: 
+false
+
++ Received: 
+Object {
+  "hello": "world",
+}",
+  "expected": "false",
+  "message": "expected { hello: 'world' } to be falsy",
+}
+`;
+
+exports[`diff 3`] = `
+{
+  "actual": "Object {
+  "hello": "world",
+}",
+  "diff": "- Expected: 
+NaN
+
++ Received: 
+Object {
+  "hello": "world",
+}",
+  "expected": "NaN",
+  "message": "expected { hello: 'world' } to be NaN",
+}
+`;
+
+exports[`diff 4`] = `
+{
+  "actual": "Object {
+  "hello": "world",
+}",
+  "diff": "- Expected: 
+undefined
+
++ Received: 
+Object {
+  "hello": "world",
+}",
+  "expected": "undefined",
+  "message": "expected { hello: 'world' } to be undefined",
+}
+`;
+
+exports[`diff 5`] = `
+{
+  "actual": "Object {
+  "hello": "world",
+}",
+  "diff": "- Expected: 
+null
+
++ Received: 
+Object {
+  "hello": "world",
+}",
+  "expected": "null",
+  "message": "expected { hello: 'world' } to be null",
+}
+`;
+
+exports[`toHaveBeenNthCalledWith error 1`] = `
+{
+  "actual": "Array [
+  "Hi",
+]",
+  "diff": "- Expected
++ Received
+
+  Array [
+-   "hey",
++   "Hi",
+  ]",
+  "expected": "Array [
+  "hey",
+]",
+  "message": "expected 2nd "spy" call to have been called with [ 'hey' ]",
+}
+`;
+
+exports[`toHaveBeenNthCalledWith error 2`] = `
+{
+  "actual": "undefined",
+  "diff": undefined,
+  "expected": "Array [
+  "hey",
+]",
+  "message": "expected 3rd "spy" call to have been called with [ 'hey' ], but called only 2 times",
+}
+`;
+
+exports[`toMatch/toContain diff 1`] = `
+{
+  "actual": "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello",
+  "diff": "Expected: "world"
+Received: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello"",
+  "expected": "world",
+  "message": "expected 'hellohellohellohellohellohellohellohe…' to contain 'world'",
+}
+`;
+
+exports[`toMatch/toContain diff 2`] = `
+{
+  "actual": "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello",
+  "diff": "Expected: "world"
+Received: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello"",
+  "expected": "world",
+  "message": "expected 'hellohellohellohellohellohellohellohe…' to match 'world'",
+}
+`;
+
+exports[`toMatch/toContain diff 3`] = `
+{
+  "actual": "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello",
+  "diff": "- Expected: 
+/world/
+
++ Received: 
+"hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello"",
+  "expected": "/world/",
+  "message": "expected 'hellohellohellohellohellohellohellohe…' to match /world/",
+}
+`;

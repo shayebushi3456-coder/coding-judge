@@ -4,7 +4,7 @@
 
 验收 go-zero `core/mapping`：基于 tag 的 `Unmarshaler`（map/JSON/YAML 入结构体）、字段选项（default/env/optional/options/range/string/inherit）、`Marshal` 回写与校验，以及 `Valuer` 递归取值/合并。对齐基准提交完整行为。
 
-预期实现改动约 **700–950 行**（问题现场对 4 个实现文件挖空约 800+ 行核心逻辑），集中在 **4 个源文件**。与既有 Casbin model 题、go-zero rest/handler 题均不重复。
+预期实现改动约 **750–950 行**（问题现场对 4 个实现文件挖空约 940 行核心逻辑），集中在 **4 个源文件**。与既有 Casbin model 题、go-zero rest/handler 题均不重复。
 
 ## 2. 目标仓库与基准提交
 
@@ -18,7 +18,7 @@
   3. `core/mapping/marshaler.go`（约 186 行）
   4. `core/mapping/valuer.go`（约 112 行，挖空递归合并取值）
 
-合计基准约 **2125 行**；问题现场保留可编译壳后，需恢复核心逻辑约 **700–950 行**（按挖空深度控制在此区间）。
+合计基准约 **2125 行**；问题现场保留可编译壳后，需恢复核心逻辑约 **750–950 行**。
 
 ## 3. 被剥离功能说明（仅评测方可见）
 

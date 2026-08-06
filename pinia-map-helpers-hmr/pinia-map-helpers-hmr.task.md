@@ -6,4 +6,4 @@ composition 那边把 store 拆成一个个 ref 拿去用，方法那些别跟�
 
 开发时改 store 能热更新接上，旧状态尽量挪到新的上面，id 对不上就该作废重来。生产环境这套热更新别瞎干活。
 
-defineStore、插件那些现成的先别弄坏。弄完在 packages/pinia 下面跑一下 pnpm test。
+建 store、插件那些现成的先别弄坏。弄完在 packages/pinia 下面跑一下 pnpm test。

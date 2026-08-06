@@ -77,6 +77,7 @@
    - 移除问题现场中的 `test/unit/adapters/http.js`
    - 移除问题现场中的 `test/unit/adapters/fetch.js`
 4. **可选**：弱化 README 中大段 Node http / fetch adapter 用法示例（若存在可照抄实现的片段），避免提示性残留。
+5. **删除 `dist/` 构建产物**：预构建 bundle（尤其 `dist/node/axios.cjs`）内嵌完整 http/fetch 实现，必须从问题现场移除，防止对照还原。
 
 ### 4.2 建议保留的公开 API / 类型 / 接线
 

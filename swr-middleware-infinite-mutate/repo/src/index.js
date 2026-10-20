@@ -1,0 +1,5 @@
+export { createCache } from './cache.js'
+export { withMiddleware } from './middleware.js'
+export { mutate } from './mutate.js'
+export { loadInfinitePages, mutateInfinite } from './infinite.js'
+export { swrFetch } from './swr.js'
